@@ -1,0 +1,105 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+
+
+/* Container central da página */
+.container {
+  max-width: 2500px;
+  margin: 0 auto; /* centraliza horizontal */
+  padding: 1rem;
+}
+
+/* Header fixo no topo */
+.topbar {
+  padding: 1rem 0;
+}
+
+.topbar .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sidebar + conteúdo */
+main {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Sidebar à esquerda */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* Painel de catálogo ocupa o resto */
+.panel {
+  flex: 1;
+}
+
+/* Catálogo em grid */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Cards */
+.card {
+  border: 1px solid;
+  padding: .5rem;
+}
+
+/* Centralizar thumbs */
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  border: 1px solid;
+  margin-bottom: .5rem;
+}
+
+/* Postagens */
+.post {
+  border: 1px solid;
+  padding: .5rem;
+  margin: 1rem 0;
+}
+
+/* Formulários */
+form.grid {
+  display: grid;
+  gap: .5rem;
+}
+
+.row {
+  display: flex;
+  gap: .5rem;
+}
+
+/* Botões */
+.btn {
+  padding: .25rem .5rem;
+  border: 1px solid;
+  text-decoration: none;
+}
+
+.btn.primary {
+  font-weight: bold;
+}
+
+/* Centralizar imagens de posts */
+.post-body figure {
+  text-align: center;
+}

@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>chan prototype — HTML + CSS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Olá
+  <header class="topbar">
+    <div class="row container" style="padding-inline:16px">
+          <nav class="boards" aria-label="Boards populares">
+            <a class="pill" href="#catalog" aria-current="page">/b/</a>
+            <a class="pill" href="#catalog">/tech/</a>
+            <a class="pill" href="#catalog">/g/</a>
+            <a class="pill" href="#catalog">/v/</a>
+            <a class="pill" href="#catalog">/wall/</a>
+          </nav>
+      <div class="toolbar" style="margin-left:auto">
+        <input id="theme" type="checkbox" hidden>
+        <label for="theme" class="theme-toggle" title="Apenas visual — não persiste"></label>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <aside class="sidebar">
+        <div class="side-title">Boards</div>
+        <div class="side-list">
+          <a class="side-item active" href="#catalog">/b/ - Aleatório</a>
+          <a class="side-item" href="#catalog">/tech/ - Tecnologia</a>
+          <a class="side-item" href="#catalog">/g/ - Programação</a>
+          <a class="side-item" href="#catalog">/v/ - Jogos</a>
+          <a class="side-item" href="#catalog">/wall/ - Wallpapers</a>
+        </div>
+      </aside>
+
+      <section id="catalog" data-view="catalog" class="panel pad">
+        <header class="row" style="justify-content:space-between">
+          <h1 style="margin:0">/b/ — Catálogo</h1>
+          <span class="badge">Threads: 8</span>
+        </header>
+        <div class="space"></div>
+        <section class="panel pad" aria-labelledby="novo-topico">
+          <h2 id="novo-topico" style="margin:0 0 8px 0">Novo tópico (estático)</h2>
+          <form class="grid" action="#" method="get">
+            <div class="row">
+              <input type="text" placeholder="Assunto (opcional)">
+              <input type="text" placeholder="Nome (Anonymous)">
+            </div>
+            <textarea placeholder="Texto do post (somente visual — sem backend)"></textarea>
+            <div class="row">
+              <input type="file" title="Anexar imagem (ilustrativo)">
+              <button class="btn primary" type="submit" title="Sem envio real">Criar thread</button>
+            </div>
+            <small class="muted">Este protótipo é 100% HTML+CSS — formulário ilustrativo, sem upload/armazenamento.</small>
+          </form>
+        </section>
+
+        <div class="space"></div>
+        <div class="catalog" role="list" aria-label="Lista de threads">
+          
+
+          
+        </div>
+      </section>
+
+      <!-- THREAD VIEW 1 -->
+      <section id="thread-1" class="thread">
+        <a class="btn" href="#catalog">← Voltar ao catálogo</a>
+        <article class="post">
+          <div class="post-head">
+            <span class="trip">Anonymous!A1B2C3</span>
+            <span class="muted">No. 000123</span>
+            <time class="muted">agora</time>
+            <span class="badge">/b/</span>
+          </div>
+          <div class="post-body">
+            <figure>
+              <img src="ac48e2fe617b27b0fd007ff304f2932b.jpg" alt="">
+              <figcaption class="muted">1280×720 • 142 KB • jpg</figcaption>
+            </figure>
+            <h1 style="margin:.2rem 0"></h1>
+          
+          </div>
+        </article>
+
+        <!-- replies -->
+        <article class="post">
+          <div class="post-head">
+            <span class="trip">Anon!x9Y2z</span>
+            <span class="muted">No. 000124</span>
+            <time class="muted">há 2 min</time>
+          </div>
+          <div class="post-body">
+            <p></p>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-head">
+            <span class="trip">Anon!spoiler</span>
+            <span class="muted">No. 000125</span>
+            <time class="muted">há 5 min</time>
+          </div>
+          <div class="post-body">
+            <details>
+              <summary>Imagem com <b>spoiler</b> — clique para revelar</summary>
+              <figure>
+                <img alt="spoiler" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><defs><filter id='b'><feGaussianBlur stdDeviation='8'/></filter></defs><rect width='100%' height='100%' fill='%23bfdbfe' filter='url(%23b)'/></svg>">
+                <figcaption class="muted">Marcado como spoiler</figcaption>
+              </figure>
+            </details>
+          </div>
+        </article>
+
+        <!-- form reply visual -->
+        <section class="panel pad">
+          <h2 style="margin-top:0">Responder (visual)</h2>
+          <form class="grid" action="#thread-1" method="get">
+            <div class="row">
+              <input type="text" placeholder="Nome (Anonymous)">
+              <input type="text" placeholder="Trip (opcional)">
+            </div>
+            <textarea placeholder="Escreva sua resposta…"></textarea>
+            <div class="row">
+              <input type="file" title="Anexar imagem (ilustrativo)">
+              <button class="btn primary" type="submit">Postar</button>
+            </div>
+            <small class="muted">Sem backend — apenas UI de exemplo.</small>
+          </form>
+        </section>
+      </section>
+
+      <!-- THREAD VIEW 2 -->
+      <section id="thread-2" class="thread">
+        <a class="btn" href="#catalog">← Voltar ao catálogo</a>
+        <article class="post">
+          <div class="post-head">
+            <span class="trip">Anonymous!WALL</span>
+            <span class="muted">No. 000200</span>
+            <time class="muted">há 22 min</time>
+            <span class="badge">/b/</span>
+          </div>
+          <div class="post-body">
+            <h1 style="margin:.2rem 0">Wallpaper dump (NSFW marcado)</h1>
+            <p>Use <code style="font-family:var(--code)">details/summary</code> como spoiler:</p>
+            <details>
+              <summary>Wallpaper com spoiler — clique</summary>
+              <figure>
+                <img alt="paper" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1080' height='1350'><rect width='100%' height='100%' fill='%23fbcfe8'/></svg>">
+                <figcaption class="muted">1080×1350 • png</figcaption>
+              </figure>
+            </details>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
 </body>
 </html>
